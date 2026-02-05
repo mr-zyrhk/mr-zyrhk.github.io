@@ -204,7 +204,7 @@ img {
     margin-bottom: 5px;
 }
 
-/* View More Button */
+/* View More Button Logic */
 .hidden-content {
     max-height: 0;
     overflow: hidden;
@@ -231,7 +231,7 @@ img {
 .expand-btn i { transition: transform 0.3s ease; }
 .expand-btn.active i { transform: rotate(180deg); }
 
-/* --- MODAL STYLES --- */
+/* --- MODAL STYLES (Important!) --- */
 .modal {
     display: none; 
     position: fixed; 
