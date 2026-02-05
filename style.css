@@ -231,7 +231,7 @@ img {
 .expand-btn i { transition: transform 0.3s ease; }
 .expand-btn.active i { transform: rotate(180deg); }
 
-/* --- MODAL STYLES (Important!) --- */
+/* --- MODAL STYLES --- */
 .modal {
     display: none; 
     position: fixed; 
