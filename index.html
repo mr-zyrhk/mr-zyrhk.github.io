@@ -17,21 +17,24 @@
                 <li><a href="#stack">Stack</a></li>
                 <li><a href="#arts">Arts</a></li>
                 <li><a href="#projects">Code</a></li>
+                <li><a href="#contact" style="color: var(--accent-color);">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        
         <section id="profile" class="section profile-container">
+            <div class="profile-image">
+                <img src="img/profile.jpg" alt="Glynn Khryz" class="image-placeholder">
+            </div>
             <div class="profile-text">
                 <h1>Hello, I'm Glynn Khryz</h1>
                 <p class="glitch-text">Software Developer & Technical Artist</p>
                 <div class="bio">
-                    <p>I build modular software and immersive digital assets. From <strong>Fortress Messenger</strong> to <strong>Minecraft Bedrock Addons</strong>, I bridge the gap between code and creativity.</p>
+                    <p>I build modular software and immersive digital assets. From <strong>Software devlopment</strong> to <strong>Game assets</strong>, I bridge the gap between code and creativity.</p>
                 </div>
-            </div>
-            <div class="profile-image">
-                <img src="img/profile.jpg" alt="Glynn Khryz" class="image-placeholder">
+                <a href="#contact" class="cta-btn">Get in Touch</a>
             </div>
         </section>
 
@@ -58,7 +61,7 @@
         </section>
 
         <section id="arts" class="section">
-            <h2 class="section-title">TECHNICAL ARTS</h2>
+            <h2 class="section-title">## TECHNICAL_ARTS</h2>
             <div class="project-grid">
                 
                 <div class="project-card" 
@@ -118,13 +121,13 @@
             </div>
 
             <button class="expand-btn" onclick="toggleSection('extra-arts', this)">
-                <span>View More</span>
+                <span>View More Art</span>
                 <i class="fas fa-chevron-down"></i>
             </button>
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title">PROJECTS</h2>
+            <h2 class="section-title">## DEPLOYED_PROJECTS</h2>
             <div class="project-grid">
                 
                 <div class="project-card" 
@@ -146,10 +149,10 @@
 
                 <div class="project-card" 
                      onclick="openModal(this)"
-                     data-title="Hardware Controls"
-                     data-desc="Arduino-based automation system using C++. Controls stepper motors based on sensor input for precise water level management."
+                     data-title="Title"
+                     data-desc="Description"
                      data-link="https://github.com/mr-zyrhk/arduino-project"
-                     data-tags="C++, Arduino, Hardware"
+                     data-tags="tags"
                      data-image="img/code2.jpg">
                     
                      <div class="thumb-wrapper">
@@ -166,10 +169,10 @@
                 <div class="project-grid mt-20">
                     <div class="project-card" 
                          onclick="openModal(this)"
-                         data-title="REDACTED"
-                         data-desc="REDACTED"
+                         data-title="Title"
+                         data-desc="Description"
                          data-link="#"
-                         data-tags="REDACTED"
+                         data-tags="tags"
                          data-image="img/code3.jpg">
                          
                         <div class="thumb-wrapper">
@@ -188,6 +191,22 @@
                 <i class="fas fa-chevron-down"></i>
             </button>
         </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">CONNECT WITH ME</h2>
+            <p style="margin-top: 20px;">Open for commissions and collaborations.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:your-email@gmail.com" title="Email Me"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/mr-zyrhk" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <div class="footer-text">
+                <p>SYSTEM_STATUS: ONLINE | © 2024 GLYNN KHRYZ</p>
+            </div>
+        </section>
     </div>
 
     <div id="infoModal" class="modal">
@@ -202,14 +221,14 @@
     </div>
 
     <script>
-        // 1. Fallback Logic: Runs if image fails to load
+        // 1. Fallback Logic
         function fallback(imgElement, id) {
-            imgElement.style.display = 'none'; // Hide broken image
+            imgElement.style.display = 'none'; 
             const wrapper = imgElement.parentElement;
             const textSpan = wrapper.querySelector('.fallback-text');
             if (textSpan) {
-                textSpan.innerText = 'PROJECT_0' + id; // Sets Text to PROJECT_01
-                textSpan.style.display = 'block'; // Shows the text
+                textSpan.innerText = 'PROJECT_0' + id; 
+                textSpan.style.display = 'block'; 
             }
         }
 
@@ -221,8 +240,8 @@
             
             if (content.style.maxHeight && content.style.maxHeight !== "0px") {
                 content.style.maxHeight = "0px";
-                if(sectionId === 'extra-arts') span.innerText = "View More";
-                else span.innerText = "View More";
+                if(sectionId === 'extra-arts') span.innerText = "View More Art";
+                else span.innerText = "View More Projects";
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
                 span.innerText = "Show Less";
@@ -249,15 +268,10 @@
             mTags.innerText = "// " + tags;
             mLink.href = link;
 
-            // Check if the image exists before showing it in modal
             if (imgSrc && imgSrc.length > 4) {
                 mImg.src = imgSrc;
                 mImg.style.display = "block";
-                
-                // Add error handler to modal image
-                mImg.onerror = function() {
-                    this.style.display = 'none';
-                };
+                mImg.onerror = function() { this.style.display = 'none'; };
             } else {
                 mImg.style.display = "none";
             }
@@ -277,5 +291,3 @@
     </script>
 </body>
 </html>
-
-
